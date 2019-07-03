@@ -1,0 +1,315 @@
+
+/* -----------------------------id----------------------------------- */
+#menu {
+	position:fixed;
+	top:0px;
+	width:100%; 
+	height:75px; 
+	/* background-color:#DDDDDD;
+	color: #FFFFFF; */
+	z-index:9999;   /*--make the menu on top of all other elements-*/
+    display: none;
+    /* opacity: 80% !important; */
+}
+.ui.massive.secondary.pointing.menu{
+    background-color: whitesmoke !important;
+    opacity: 70% !important;
+    border-bottom: none !important;
+    /* margin: 100%; */
+}
+/* --------------------------classes------------------------------ */
+.my-background{
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+
+/*--------------------- header -----------------------------*/
+.my-header{
+    background-color:lightblue;
+    min-height:760px;
+    padding: 20px;
+}
+
+.my-header-image{
+    background-color:lightblue !important;
+    background-image: url("../images/background-sky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+    height:760px;
+}
+
+
+a.my-header-item{
+    color: rgb(20, 51, 78) !important;
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+    padding-bottom: 1.2em !important;
+}
+
+a.my-header-active{
+    color: rgb(218, 232, 247) !important;
+    border-bottom-color: rgb(219, 233, 245) !important;
+    
+}
+/*------------------------ content ---------------------------*/
+.my-content{
+    background-color:whitesmoke !important;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+    height:760px;
+    /* padding-top:20px !important; */
+    /* opacity: 0.9 !important; */
+
+}
+
+/* --------------------------flexbox----------------------------- */
+.my-flexbox {
+    background-color: #fff;
+    /* min-width: 100%;
+    min-height: 200px; */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin: 0px;
+    /* make the element in the middle to show as center */
+    justify-content: start;
+    /* justify-content: space-between; */
+    
+
+  }
+  .my-flexbox-item {
+    /* background-color: #e74c3c; */
+    /* min-width: 200px; */
+    width: 33.33%;
+    /* height:150px; */
+
+    margin:10px;
+    /* position: relative; */
+
+  }
+  .my-flexbox-item:before{
+      padding-left: 20px;
+  }
+/*----------------------- sliding-grid-css -----------------------*/
+:root {
+    --gutter: 20px;
+  }
+  
+  .app {
+    padding: var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: var(--gutter) 1fr var(--gutter);
+    align-content: start;
+  }
+
+  .app::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .app > * {
+    grid-column: 2 / -2;
+  }
+  
+  .app > .full {
+    grid-column: 1 / -1;
+  }
+  
+  .hs {
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: 10px repeat(6, calc(33.33% - var(--gutter) * 2)) 10px;
+    grid-template-rows: minmax(150px, 1fr);
+    
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+    margin-bottom: calc(-.5 * var(--gutter));
+    /* justify-content: center; */
+
+  }
+  
+  .hs:before,
+  .hs:after {
+    content: '';
+  }
+  
+  /* Hide scrollbar */
+  .hide-scroll {
+    overflow-y: hidden;
+    margin-bottom: calc(-.1 * var(--gutter));
+  }
+  
+  
+  /* Demo styles */
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  
+  .app {
+    /* width: 375px; */
+    width:100%;
+    height: 667px;
+    background: whitesmoke;
+    overflow-y: scroll;
+  }
+  
+  .hs > li,
+  .my-sliding-item {
+    scroll-snap-align: center;
+    /* padding: calc(var(--gutter) / 2 * 1.5); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:transparent;
+    /* background: #fff; */
+    height:300px;
+    /* border-radius: 8px; */
+  }
+  /* make the image fit into the div cut off the overflow and centered */
+  .my-sliding-image{
+      /* overflow: hidden; */
+      width: 100%;
+      object-position: center center;
+      object-fit: cover;
+      height: 300px;
+      /* max-height:100%; */
+  }
+
+/* ------------------------my-card--------------------------- */
+.my-card{
+    width:320px !important;
+}
+
+.my-card:hover{
+    width:360px !important;
+}
+
+/*------------------------ footer -----------------------------*/
+.my-contact-icon{
+    display:inline-block !important;
+    padding-right:0.5em !important;
+    padding-left: 0.5em !important;
+}
+/* override the .inverted.segment */
+.inverted.segment.my-footer{
+    background: rgb(42, 49, 58) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+
+/*---------------------- global properties ----------------------*/
+.my-padding-updown-small{
+    padding-top: 1em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.my-padding-updown-medium{
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.my-padding-updown-large{
+    padding-top: 20em !important;
+    padding-bottom: 20em !important;
+}
+
+.my-padding-leftright-small{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+
+.my-padding-leftright-medium{
+    padding-left: 6em !important;
+    padding-right: 6em !important;
+}
+
+/* ------------------override---------------------- */
+.my-container{
+    width:100% !important;
+}
+
+
+/*----------------------------- responsive web design ------------------------------*/
+.my-mobile-shown{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .my-header-image{
+        background-image: url("../images/background-sky.jpg");
+        background-repeat: no-repeat;
+        background-position:top;
+        height:300px;
+    }
+    .my-mobile-shown{
+        display: inline !important;
+        position: absolute;
+        top:2em;
+        right: 3em;
+    }
+    .my-mobile-hidden{
+        display:none !important;
+    }
+
+    .my-padding-updown-large{
+        padding-top: 15em !important;
+        padding-bottom: 15em !important;
+    }
+    /* -------------------my-content------------------ */
+    .my-content{
+        background-color:whitesmoke !important;
+        background-size: cover;
+        background-position:center center;
+        background-attachment: fixed;
+        height:550px;
+        /* padding-top:20px !important; */
+        /* opacity: 0.9 !important; */
+    
+    }
+    /*---------------- sliding window------------ */
+    .hs{
+        grid-template-columns: 10px repeat(6, calc(70% - var(--gutter) * 2)) 10px;
+    }
+
+    .hs > li,
+    .my-sliding-item {
+      scroll-snap-align: center;
+      /* padding: calc(var(--gutter) / 2 * 1.5); */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:transparent;
+      /* background: #fff; */
+      height:300px;
+      /* object-position: center center; */
+      /* overflow: hidden; */
+      /* border-radius: 8px; */
+    }
+
+    .my-sliding-image{
+        /* overflow: hidden; */
+        width: 100%;
+        object-position: center center;
+        object-fit: cover;
+        height: 250px;
+        /* max-height:100%; */
+    }
+}
