@@ -1,5 +1,4 @@
 # Website
 To build  a blog website...
 
-https://www.bigchickenleg.com
-
+<a href="http://www.bigchickenleg.com" target="_blank">http://www.bigchickenleg.com</a>
