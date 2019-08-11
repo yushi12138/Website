@@ -1,0 +1,20 @@
+spring:
+   thymeleaf:
+      mode: HTML
+   datasource:
+      url: jdbc:mysql://localhost:3306/blog
+      username: yu
+      password: s7y7z12l24
+   jpa:
+      hibernate:
+         ddl-auto: update
+      show-sql: true
+      
+logging:
+   level:
+      root: info
+      com.bigchickenleg.blog: debug
+   file: log/blog-dev.log
+  
+  
+  

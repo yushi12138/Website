@@ -1,0 +1,730 @@
+
+body{
+	font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif !important;
+}
+/* -----------------------------following bar----------------------------------- */
+#menu {
+	position:fixed;
+	top:0px;
+	width:100%; 
+	/* height:75px;  */
+	/* background-color:#DDDDDD;
+	color: #FFFFFF; */
+	z-index:9999;   /*--make the menu on top of all other elements-*/
+    display: none;
+    transition: top 0.3s;
+
+    /* opacity: 80% !important; */
+}
+.ui.massive.secondary.pointing.menu{
+    background-color: rgb(235, 235, 235) !important;
+    opacity: 70% !important;
+    border-bottom: none !important;
+    /* margin: 100%; */
+}
+/* --------------------------main page------------------------------ */
+.my-background{
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+/* ---------------------following-header----------------------- */
+.my-following-header{
+    background-color:rgb(235, 235, 235);
+    opacity: 0.9 !important;
+}
+/* .my-following-header-js-click-show{
+    display: inline-block !important;
+} */
+
+/*--------------------- header -----------------------------*/
+.my-header{
+    background-color:lightblue;
+    min-height:760px;
+    padding: 20px;
+}
+
+.my-header-image{
+    background-color:snowwhite !important;
+    /* background-image: url("../images/background-sky.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+    height:760px;
+}
+.my-header-icon{
+    width: 4em !important;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 100% !important;
+}
+
+/* ----------------------main page menu item------------------------- */
+.my-header-item{
+    color: rgb(20, 51, 78) !important;
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+    padding-bottom: 1.2em !important;
+    display: inline-block !important;
+}
+.my-header-item:hover{
+    color: rgb(218, 232, 247) !important;
+
+}
+
+.my-header-active{
+    color: rgb(218, 232, 247) !important;
+    border-bottom-color: rgb(219, 233, 245) !important;
+    
+}
+/* ----------------------following menu item------------------------- */
+.my-following-header-item{
+    /* color: rgb(20, 51, 78) !important; */
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+    padding-bottom: 1.2em !important;
+    display: inline-block !important;
+}
+.my-following-header-item:hover{
+    color: darkgray !important;
+
+
+}
+
+/*------------------------ content ---------------------------*/
+.my-content{
+    background-color:transparent !important;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+    height:760px;
+    /* padding-top:20px !important; */
+    /* opacity: 0.9 !important; */
+
+}
+.my-projects{
+    background-color:white !important;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+}
+
+.my-content-bg{
+    background-color:white !important;
+    opacity: 0.9 !important;
+    background-size: cover;
+    background-position:center center;
+    background-attachment: fixed;
+}
+
+/* --------------------------flexbox----------------------------- */
+.my-flexbox {
+    background-color: #fff;
+    /* min-width: 100%;
+    min-height: 200px; */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin: 0px;
+    /* make the element in the middle to show as center */
+    justify-content: start;
+    /* justify-content: space-between; */
+    
+
+  }
+  .my-flexbox-item {
+    /* background-color: #e74c3c; */
+    /* min-width: 200px; */
+    width: 33.33%;
+    /* height:150px; */
+
+    margin:10px;
+    /* position: relative; */
+
+  }
+  .my-flexbox-item:before{
+      padding-left: 20px;
+  }
+/*----------------------- sliding-grid-css -----------------------*/
+:root {
+    --gutter: 20px;
+  }
+  
+  .app {
+    padding: var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: var(--gutter) 1fr var(--gutter);
+    align-content: start;
+  }
+
+  .app::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .app > * {
+    grid-column: 2 / -2;
+  }
+  
+  .app > .full {
+    grid-column: 1 / -1;
+  }
+  
+  .hs {
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: 10px repeat(6, calc(33.33% - var(--gutter) * 2)) 10px;
+    grid-template-rows: minmax(150px, 1fr);
+    
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+    margin-bottom: calc(-.5 * var(--gutter));
+    /* justify-content: center; */
+
+  }
+  
+  .hs:before,
+  .hs:after {
+    content: '';
+  }
+  
+  /* Hide scrollbar */
+  .hide-scroll {
+    overflow-y: hidden;
+    margin-bottom: calc(-.1 * var(--gutter));
+  }
+  
+  
+  /* Demo styles */
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  
+  .app {
+    /* width: 375px; */
+    width:100%;
+    height: 350px;
+    /* background: whitesmoke; */
+    overflow-y: scroll;
+    /* padding: none !important; */
+  }
+  
+  .hs > li,
+  .my-sliding-item {
+    scroll-snap-align: center;
+    /* padding: calc(var(--gutter) / 2 * 1.5); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:transparent;
+    /* background: #fff; */
+    height:300px;
+    /* ------overlay----- */
+    overflow: hidden;
+    position: relative;
+    /* border-radius: 8px; */
+  }
+  /* make the image fit into the div cut off the overflow and centered */
+  .my-sliding-image{
+      /* overflow: hidden; */
+      width: 100%;
+      object-position: center center;
+      object-fit: cover;
+      height: 300px;
+      /* max-height:100%; */
+  }
+/* ------------sliding-item-overlay------------- */
+.overlay {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 7%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(161,175,201);
+  }
+  
+  .my-sliding-item > .overlay{
+    width: 100%;
+
+  }
+  .my-sliding-item:hover{
+    transform: scale(1.1) !important;
+    z-index:1 !important;
+    transition: 0.5s ease !important;
+    
+  }
+  .my-sliding-item:hover .overlay {
+    opacity: 0.9;
+    /* transform: scale(1.05) !important; */
+  }
+  
+  .my-overlay-text {
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+/* ------------------------card--------------------------- */
+.ui.card.my-card-row{
+    flex-direction: unset !important;
+    width: 100% !important;
+    height: auto !important;
+}
+.ui.card.my-card-row >.image{
+    height: 300px !important;
+    width: 65.3% !important;
+    border-radius: 0.28571429rem 0em 0em 0.28571429rem !important;
+}
+
+.ui.card.my-card-row >.content{
+    /* width: 70% !important; */
+    /* flex-grow: 0 !important; */
+    border-top: none !important;
+    margin: 2em !important;
+}
+
+.ui.card{
+    width: 96% !important;
+    margin: 2% !important;
+    /* margin-right: 2% !important; */
+    height: 96%;
+    transition: 0.5s ease !important;
+    /* flex-direction: row !important; */
+
+}
+/* zoom-on hover */
+.ui.card:hover{
+    transform: scale(1.06) !important;
+    /* margin-right: 0% !important; */
+
+}
+
+.ui.cards > .card > .image, .ui.card > .image {
+    height: 200px !important;
+    overflow: hidden !important;
+    object-position: center center !important;
+    object-fit: cover !important;
+
+}
+.content, .ui.card > .content {
+    height: 100px !important;
+    
+}
+.content, .ui.card > .extra.content {
+    height: 50px !important;
+}
+
+/* ---------------------------my-tags ----------------------------- */
+.ui.grid > .row > .blue.column{
+    background-color: rgb(26, 167, 45) !important;
+}
+/* ------------------------------sidebar----------------------------- */
+.my-sidebar-item-posts{
+
+}
+
+/*------------------------ footer -----------------------------*/
+.my-contact-icon{
+    display:inline-block !important;
+    text-align: center !important;
+    padding-right:0.5em !important;
+    padding-left: 0.5em !important;
+    position:relative;
+    top: calc(50% - 10px); 50% - 3/4 of icon height
+}
+/* override the .inverted.segment */
+.inverted.segment.my-footer{
+    background: rgb(42, 49, 58) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+/* ---------------------------page-projects/sharings---------------------- */
+.my-post-description-image{
+    width:100% !important;
+    height: 150px !important;
+    object-position: center center;
+    object-fit: cover;
+    overflow: hidden;
+
+}
+/* -------------------------page-post---------------------------------- */
+.my-post-image{
+    width: 100%;
+    object-position: center center;
+    object-fit: cover;
+    height: 400px;
+    /* max-height:100%; */
+}
+.my-sticky-vertical-menu{
+
+    position: fixed;
+    top: 15em;
+    left: 0;
+    z-index: 1 !important;
+
+}
+
+.toc-container{
+    width: 180px !important;
+    /* background-color: transparent !important; */
+}
+/* -------------------------page-aboutMe-------------------------------- */
+.my-overlay-item{
+    /* height: 500px; */
+    /* scroll-snap-align: center; */
+    /* padding: calc(var(--gutter) / 2 * 1.5); */
+    display: flex;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:transparent; */
+    /* background: #fff; */
+    /* ------overlay----- */
+    /* overflow: hidden; */
+    position: relative;
+}
+.my-overlay-item:hover .overlay{
+    opacity: 0.7;
+}
+.my-overlay-button{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+/*---------------------- global properties ----------------------*/
+.my-padding-updown-small{
+    padding-top: 0.6em !important;
+    padding-bottom: 0.3em !important;
+}
+
+.my-padding-updown-medium{
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.my-padding-updown-large{
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+
+.my-padding-leftright-mini{
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+
+.my-padding-leftright-small{
+    /* padding-left: 4em !important; */
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+.my-padding-leftright-medium{
+    padding-left: 6em !important;
+    padding-right: 6em !important;
+}
+.my-left-aligned{
+    text-align: left !important;
+}
+/* ------------------override---------------------- */
+.ui.secondary.pointing.menu .active.item {
+	font-weight: lighter !important;	
+}
+/* ---------comments */
+.ui.comments .comment .text {
+	font-size:1em !important;
+}
+.ui.comments .comment .avatar {
+	width:3.5em !important;
+}
+.content, .ui.card > .extra.content {
+	height: 70px !important;
+}
+.ui.comments .comment > .avatar ~ .content {
+    margin-left: 4.5em;
+}
+.ui.comments .comment .author {
+	font-size: 1.2em !important;
+}
+.ui.comments .comment .text {
+	line-height:1.3 ;
+	font-size: 1.15em !important;
+		
+}
+/*  */
+
+.my-container{
+    width:100% !important;
+}
+.my-container-medium{
+	width:80% !important;
+}
+.my-avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.ui.avatar.image.my-avatar{
+    width: 40px !important;
+    height:40px !important;
+}
+.my-header-avatar{
+    width: 60px !important;
+    border-radius: 100% !important;
+}
+/* .my-header-avatar:hover{
+    width: 70px !important;
+    border-radius: 100% !important;
+} */
+.my-text{
+    margin: 1.4em !important;
+    text-align: left;
+    line-height: 1.6em !important;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    color: darkgrey;
+}
+.my-text:hover{
+    color: darkslategrey !important;
+}
+.my-left-aligned{
+    text-align: left !important; 
+}
+.my-right-aligned{
+    position: absolute !important;top:1.7em !important; right:1em !important;
+}
+.my-right-aligned.my-sidebar{    
+    position: absolute !important;
+    top:1.4em !important; 
+    right:0.5em !important;
+
+
+}
+/* ---------tag-button---------- */
+.my-tag-button{
+    display: inline-block;
+    border: 1px solid #f5f5f5 !important;
+    border-radius: 2px !important;
+    padding: 5px 10px !important;
+    color: rgba(0,0,0,0.6) !important;
+    background-color: transparent !important;
+    line-height: 22px !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    margin: 0 1px !important;
+    margin-bottom: 6px !important;
+}
+.my-tag-button.my-tag-blue:hover{
+    border: 1px solid #4575dd !important;
+    color: #4575dd !important;
+
+}
+.my-tag-button.my-tag-red:hover{
+    border: 1px solid #db2f2f !important;
+    color: #db2f2f !important;
+
+}
+
+/* --------------my-text---------- */
+.my-inline-text{
+    display: inline !important;
+    text-align: right !important;
+    padding: 10px !important;
+
+}
+/* ----------copyright------------- */
+.my-copyright{
+	font-size: 1em;
+	color:grey;
+}
+.my-copyright-link{
+	color:grey;
+}
+.mycopyright-link:hover{
+	color:blue;
+}
+/*----------------------------- responsive web design ------------------------------*/
+.my-mobile-shown{
+    display: none !important;
+}
+.my-mobile-menu-shown{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .my-header-image{
+        background-image: url("../images/background-sky.jpg");
+        background-repeat: no-repeat;
+        background-position:top;
+        height:250px;
+    }
+    .my-mobile-shown{
+        display: inline-block !important;
+        position: absolute;
+        /* top:1em; 
+        right: 3em; */
+    }
+    .my-mobile-menu-shown{
+        display: inline-block !important;
+        position: absolute;
+        top:1em; 
+        right: 3em;
+    }
+    .my-mobile-hidden{
+        display:none !important;
+    }
+
+    .my-padding-updown-large{
+        padding-top: 3em !important;
+        padding-bottom: em !important;
+    }
+    /* -------------------my-content------------------ */
+    .my-content{
+        background-color:transparent !important;
+        background-size: cover;
+        background-position:center center;
+        background-attachment: fixed;
+        height:600px;
+        /* padding-top:20px !important; */
+        /* opacity: 0.9 !important; */
+    
+    }
+    /*---------------- sliding window------------ */
+    .hs{
+        grid-template-columns: 10px repeat(6, calc(85% - var(--gutter) * 2)) 10px;
+    }
+
+    .hs > li,
+    .my-sliding-item {
+      scroll-snap-align: center;
+      /* padding: calc(var(--gutter) / 2 * 1.5); */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:transparent;
+      /* background: #fff; */
+      height:250px;
+      /* object-position: center center; */
+      overflow: hidden;
+      position: relative;
+      /* border-radius: 8px; */
+    }
+
+    .my-sliding-image{
+        /* overflow: hidden; */
+        width: 100%;
+        object-position: center center;
+        object-fit: cover;
+        height: 250px;
+        /* max-height:100%; */
+    }
+   
+    /* ----------------------my-sharings-------------------------- */
+    /* .my-sharings-mobile{
+        height: 1000px;
+    } */
+
+    .my-card-mobile{
+        display: none !important;
+    }
+
+    /* -------------------------my-tags------------------------------ */
+    /* .my-tags-mobile{
+        height:1000px;
+    } */
+    .my-label-mobile{
+        display: none !important;
+    }
+    .my-button-mobile{
+        border-top-right-radius: 0.28571429rem !important;
+        border-bottom-right-radius: 0.28571429rem !important;
+    }
+    /* -------------------------row-cards----------------------------- */
+    .ui.card.my-card-row{
+        flex-direction: column !important;
+        width: 96% !important;
+        margin-left: 2% !important;
+        margin-right: 2% !important;       
+    }
+    .ui.card.my-card-row >.image{
+        height: 200px !important;
+        display: block !important;
+        width: 100% !important;
+        border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;
+    }
+    
+    .ui.card.my-card-row >.content{
+        /* width: 70% !important; */
+        /* flex-grow: 0 !important; */
+        border-top: none !important;
+        margin: 0em !important;
+    }
+    .ui.card.ui.card.my-card-row >.extra.content{
+        border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+    .ui.card{
+        width: 96% !important;
+        margin-left: 2% !important;
+        margin-right: 2% !important;
+        /* flex-direction: row !important; */
+    
+    }
+    /* ----project/sharing-list-item-paragraph--- */
+    .my-mobile-center-aligned{
+        text-align: center !important; 
+    }
+    /* -----------------page-projects/sharings----------------------- */
+    .my-post-description-image{
+        width:100% !important;
+        height: 250px !important;
+        object-position: center center;
+        object-fit: cover;
+        overflow: hidden;
+    
+    }
+    .my-padding-leftright-mini{
+        padding-left: 0.1em !important;
+        padding-right: 0.1em !important;
+    }
+    .my-padding-leftright-three-em{
+        padding-left: 3em !important;
+        padding-right: 3em !important;
+    }
+    /* -------------------------page-post---------------------------------- */
+    .my-post-image{
+        width: 100%;
+        object-position: center center;
+        object-fit: cover;
+        height: 250px !important;
+        /* max-height:100%; */
+    }
+    /* -------------------------------blog list bottom padding when mobile----------------------------------- */
+    .my-blog-header-mobile-padding{
+    	padding-bottom: 15px !important;
+    }
+
+}

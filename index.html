@@ -6,60 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Yu's</title>
 
-    <link rel="stylesheet" href="./static/css/myStyleSheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"></script>
-  
+    <link rel="stylesheet" href="../static/css/myStyleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css">
+    <!-- !!!!!!!----------------jquery always above semantic ui js file-----------------!!!!!!!!!!!1 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
 
 </head>
 <body>
     <!-- -------------following bar----------------- -->
-    <div class="ui" id="menu">
-        <div class="ui massive secondary pointing menu" >
-            <a class="active item">
-            Home
-            </a>
-            <a class="item">
-            Projects
-            </a>
-            <a class="item">
-            Sharings
-            </a>
-            <a href="" class="item">Tags</a>
-            <a href="" class="item">About Me</a>
-            <a class="item right my-mobile-hidden">
-                <div class="ui transparent icon input">
-                    <input type="text" placeholder="Search...">
-                    <i class="search icon"></i>
+    <div class="my-following-header" id="menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu stackable" style="border-bottom: none;">
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true" alt="" class="my-header-icon" style="width: 56px !important;">
+                        <div class="item my-mobile-shown center aligned" id="my-following-header-js-mobile-show">
+                            MENU<i class="ui angle down icon"></i>
+                        </div>
+                    </a>
+    
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Home
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Sharings
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                    Projects
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">Tags</a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">About Me</a>
+                    <a class="item right my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search icon"></i>
+                        </div>
+                    </a>
                 </div>
-            </a>
         </div>
+
     </div>
+    
 
     <!-------------------------------- main page ------------------------------->
     <div class="my-page">
     <!-- nav bar -->
-        <div class="my-header-image">
+        <div class="my-header-image" style="background-image: url(../static/images/cloud4.jpg);">
             <div class="ui container">
                 
                 <div class="ui secondary pointing menu stackable">
 
-                    <a href="#" class="ui blue large header teal item" style="color: seashell !important;">Yu</a>
-
-                    <a class="item my-header-item my-header-active my-mobile-hidden">
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" alt="" class="my-header-icon">
+                    </a>
+                    <a href="" class="item my-header-item my-header-active my-mobile-hidden">
                         Home
                     </a>
-                    <a class="item my-header-item my-mobile-hidden">
-                        Projects
-                    </a>
-                    <a class="item my-header-item my-mobile-hidden">
+                    <a href="" class="item my-header-item my-mobile-hidden">
                         Sharings
                     </a>
-                    <a class="item my-header-item my-mobile-hidden">
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Projects
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
                         Tags
                     </a>
-                    <a class="item my-header-item my-mobile-hidden">
+                    <a href="" class="item my-header-item my-mobile-hidden">
                         About Me
                     </a>
                     <a class="item right my-header-item my-mobile-hidden">
@@ -69,13 +82,13 @@
                         </div>
                     </a>
                     <!-- <i class="ui bars icon my-mobile-shown"></i> -->
-                    <div class="ui compact menu left my-mobile-shown my-background" >
+                    <div class="ui compact menu left my-mobile-menu-shown my-background" >
                             <div class="ui simple dropdown item">
                               <i class="bars icon"></i>
                               <div class="left menu">
                                 <a href="" class="item">Home</a>
-                                <a href="" class="item">Projects</a>
                                 <a href="" class="item">Sharings</a>
+                                <a href="" class="item">Projects</a>
                                 <a href="" class="item">About Me</a>
                               </div>
                             </div>
@@ -87,277 +100,503 @@
             </div>
             
 
-
-            <!-- <div class="ui container my-padding-updown-large">
-                <h1 class="ui grey right aligned header ">
-                    Welcome to Yu's.
-                </h1>
-            </div> -->
-
         </div>
     <!-- content -->
-    <div class="my-content">
+        <div class="my-content-bg" style="background-image: url(../static/images/texture-white-black.jpeg) !important;">
 
-            <!-- <div class="my-flexbox">    
-                    <div class="my-flexbox-item">
-                            <img class=""src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-                    <div class="my-flexbox-item">
-                            <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-                    <div class="my-flexbox-item">
-                            <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-                    <div class="my-flexbox-item">
-                            <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-                    <div class="my-flexbox-item">
-                            <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-                    <div class="my-flexbox-item">
-                            <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-                    <div class="my-flexbox-item">
-                            <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
-                    </div>
-    
-                </div> -->
+            <!-- -----------------------------------projects------------------------------------------ -->
+            <div class="">
 
-
-
-        <div class="app">
-
-            <h1 class="ui header centered my-padding-updown-medium">A glimpse of projects
-                <br>
-                <br>
-                <a href="" class="" style="font-size: 15px; color: grey;">SEE ALL PROJECTS</a>
-
-            </h1>
-          
-            <div class="full hide-scroll">
-          
-              <ul class="hs">
-                <li class="my-sliding-item">
-                    <img class="my-sliding-image" src="http://i.imgur.com/7sxuuef.jpg">
-                </li>
-                <li class="my-sliding-item">
-                    <img class="my-sliding-image" src="static/images/background-sky.jpg">
-                </li>
-                <li class="my-sliding-item">
-                    <img class="my-sliding-image" src="static/images/background-stone.jpg">
-                </li>
-                <li class="my-sliding-item">
-                    <img class="my-sliding-image" src="static/images/background-sky.jpg">
-                </li>
-                <li class="my-sliding-item">
-                    <img class="my-sliding-image" src="static/images/background-stone.jpg">
-                </li>
-                <li class="my-sliding-item">
-                    <img class="my-sliding-image" src="static/images/background-sky.jpg">
-                </li>
-
-              </ul>
-          
-            </div>
-          
-
-          </div>
-
-    </div>
-    <!-- --------------------------------------second part content: sharings------------------------------------- -->
-    <div class="my-content ui container my-container">
-        <h1 class="ui header centered my-padding-updown-medium">Recent sharings
-            <br>
-            <br>
-            <a href="" class="" style="font-size: 15px; color: grey;">SEE ALL SHARINGS</a>
-        </h1>
-
-        <div class="ui three column grid stackable">
-            <div class="column ">
-                    <div class="ui card centered my-card">
-                        <div class="image">
-                            <img src="static/images/background-stone.jpg">
-                        </div>
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta">
-                            <span class="date">Joined in 2013</span>
+                    <!-- <div class="my-flexbox">    
+                            <div class="my-flexbox-item">
+                                    <img class=""src="http://i.imgur.com/7sxuuef.jpg">
                             </div>
-                            <div class="description">
-                            Kristy is an art director living in New York.
+                            <div class="my-flexbox-item">
+                                    <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
                             </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                <a>
-                                    <i class="eye icon"></i>
-                                    22 viewed
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-            </div>
+                            <div class="my-flexbox-item">
+                                    <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
+                            </div>
+                            <div class="my-flexbox-item">
+                                    <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
+                            </div>
+                            <div class="my-flexbox-item">
+                                    <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
+                            </div>
+                            <div class="my-flexbox-item">
+                                    <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
+                            </div>
+                            <div class="my-flexbox-item">
+                                    <img class="my-flexbox-item"src="http://i.imgur.com/7sxuuef.jpg">
+                            </div>
+            
+                        </div> -->
+                <h1 class="ui header centered my-padding-updown-large" style="padding-bottom: 1em !important;">Recent Sharings
+                    <br>
+                    <br>
+                    <a href="" class="" style="font-size: 15px; color: grey;">SEE ALL SHARINGS</a>
 
-            <div class="column ">
-                    <div class="ui card centered my-card">
-                        <div class="image">
-                            <img src="static/images/background-stone.jpg">
-                        </div>
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta">
-                            <span class="date">Joined in 2013</span>
-                            </div>
-                            <div class="description">
-                            Kristy is an art director living in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                <a>
-                                    <i class="eye icon"></i>
-                                    22 viewed
-                                </a>
-                            </span>
+                </h1>
 
-                        </div>
-                    </div>
-            </div>
 
-            <div class="column">
-                    <div class="ui card centered my-card">
-                        <div class="image">
-                            <img src="static/images/background-stone.jpg">
-                        </div>
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta">
-                            <span class="date">Joined in 2013</span>
-                            </div>
-                            <div class="description">
-                            Kristy is an art director living in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                <a>
-                                    <i class="eye icon"></i>
-                                    22 viewed
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-            </div>
+                <div class="app">
 
-            <!-- <div class="column">
-                    <div class="ui card centered">
-                        <div class="image">
-                            <img src="static/images/background-stone.jpg">
-                        </div>
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta">
-                            <span class="date">Joined in 2013</span>
-                            </div>
-                            <div class="description">
-                            Kristy is an art director living in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <a>
-                            <i class="user icon"></i>
-                            22 Friends
+                
+                    <div class="full hide-scroll">
+                
+                    <ul class="hs">
+                        <li class="my-sliding-item">
+                            <img class="my-sliding-image" src="static/images/background-sky.jpg">
+                            <a href="" class="overlay">
+                                <div class="my-overlay-text">
+                                    Building Web Server 
+                                    <br>
+                                    <br>
+                                    Using Raspberry-pi to build a web server.
+                                </div>
                             </a>
-                        </div>
-                    </div>
-            </div> -->
-        </div>
+                        </li>
+                        <li class="my-sliding-item">
+                            <img class="my-sliding-image" src="static/images/background-sky.jpg">
+                            <a href="" class="overlay">
+                                <div class="my-overlay-text">
+                                    Building Web Server 
+                                    <br>
+                                    <br>
+                                    Using Raspberry-pi to build a web server.
+                                </div>
+                            </a>
+                        </li>
+                        <li class="my-sliding-item">
+                            <img class="my-sliding-image" src="static/images/background-stone.jpg">
+                            <a href="" class="overlay">
+                                <div class="my-overlay-text">
+                                    Building Web Server 
+                                    <br>
+                                    <br>
+                                    Using Raspberry-pi to build a web server.
+                                </div>
+                            </a>
+                        </li>
+                        <li class="my-sliding-item">
+                            <img class="my-sliding-image" src="static/images/background-sky.jpg">
+                            <a href="" class="overlay">
+                                <div class="my-overlay-text">
+                                    Building Web Server 
+                                    <br>
+                                    <br>
+                                    Using Raspberry-pi to build a web server.
+                                </div>
+                            </a>
+                        </li>
+                        <li class="my-sliding-item">
+                            <img class="my-sliding-image" src="static/images/background-stone.jpg">
+                            <a href="" class="overlay">
+                                <div class="my-overlay-text">
+                                    Building Web Server 
+                                    <br>
+                                    <br>
+                                    Using Raspberry-pi to build a web server.
+                                </div>
+                            </a>
+                        </li>
+                        <li class="my-sliding-item">
+                            <img class="my-sliding-image" src="static/images/background-sky.jpg">
+                            <a href="" class="overlay">
+                                <div class="my-overlay-text">
+                                    Building Web Server 
+                                    <br>
+                                    <br>
+                                    Using Raspberry-pi to build a web server.
+                                </div>
+                            </a>
+                        </li>
 
-        
-    </div>
-        <br>
-        <br>
-        <br>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    <!-- footer -->
-    <!-- <footer class="ui inverted vertical segment">
-        <div class="ui center aligned container">
-            <div class="ui grid divided inverted stackable">
-                <div class="three wide column">
-                    <div class="item">
-                        <img src="http://i.imgur.com/7sxuuef.jpg" alt="" class="ui medium circular image">
+                    </ul>
+                
                     </div>
+                
+
                 </div>
 
-                <div class="three wide column">
-                    <h4 class="ui inverted header">New</h4>
-                    <div class="ui inverted link list">
-                        <a href="" class="item"> Story</a>
-                        <a href="" class="item"> Story</a>
-                        <a href="" class="item"> Story</a>
-                    </div>
-                </div>
-
-                <div class="three wide column">
-                        <h4 class="ui inverted header">New</h4>
-                        <div class="ui inverted link list">
-                          <a href="" class="item"> Story</a>
-                          <a href="" class="item"> Story</a>
-                          <a href="" class="item"> Story</a>
-                        </div>
-                      </div>
             </div>
 
 
+            <br>
+            <br>
+            <br>
+            <div class="ui container">
+                <div class="ui section divider header"></div>
+            </div>
+            <!-- ---------------------------second part content: sharings----------------------------- -->
+            <div class=" ui container my-sharings-mobile">
+                <h1 class="ui header centered my-padding-updown-medium">A Glimpse of Projects
+                    <br>
+                    <br>
+                    <a href="" class="" style="font-size: 15px; color: grey;">SEE ALL PROJECTS</a>
+                </h1>
+                
+                <div class="ui colomn grid stackable">
+                    <div class="ui card centered my-card-row">
+                        <div class="image">
+                            <img src="static/images/background-stone.jpg">
+                        </div>
+                        <div class="content">
+                                    
+                                <a class="header">Kristy</a>
+
+                            <div class="meta">
+                                <span class="date">
+                                    <div class="ui breadcrumb">
+                                        <div class="section">Home</div>
+                                        <div class="divider"> / </div>
+                                        <div class="section">Search</div>
+                                    </div>
+                                                
+                                </span>
+                            </div>
+
+                            <div class="description">
+                            Kristy is an art directoradfafas    
+                            living in New York.
+                            <br>
+                            <br>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                                <span class="right floated">
+                                    <a>
+                                        <i class="eye icon"></i>
+                                        22 viewed
+                                    </a>
+                                </span>
+                            </div>
+
+
+                    </div>                    
+                </div>
+
+                
+                <div class="ui three column grid stackable">
+                    <div class="column ">
+                            <div class="ui card centered">
+                                <div class="image">
+                                    <img src="static/images/background-stone.jpg">
+                                </div>
+                                <div class="content">
+                                    
+                                        <a class="header">Kristy</a>
+
+                                    <div class="meta">
+                                    <span class="date">
+                                        <div class="ui breadcrumb">
+                                            <div class="section">Home</div>
+                                            <div class="divider"> / </div>
+                                            <div class="section">Search</div>
+                                        </div>
+                                                  
+                                    </span>
+                                    
+
+                                    </div>
+
+                                    <div class="description">
+                                    Kristy is an art director
+                                    
+                                    aasdf
+                                    asd
+                                
+                                    living in New York.
+                                    <br>
+                                    <br>
+
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <span class="right floated">
+                                        <a>
+                                            <i class="eye icon"></i>
+                                            22 viewed
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="column ">
+                            <div class="ui card centered">
+                                <div class="image">
+                                    <img src="static/images/background-stone.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">Kristy</a>
+                                    <div class="meta">
+                                    <span class="date">Joined in 2013</span>
+                                    </div>
+                                    <div class="description">
+                                    Kristy is an art director living in New York.
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <span class="right floated">
+                                        <a>
+                                            <i class="eye icon"></i>
+                                            22 viewed
+                                        </a>
+                                    </span>
+
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="column">
+                            <div class="ui card centered">
+                                <div class="image">
+                                    <img src="static/images/background-stone.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">Kristy</a>
+                                    <div class="meta">
+                                    <span class="date">Joined in 2013</span>
+                                    </div>
+                                    <div class="description">
+                                    Kristy is an art director living in New York.
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <span class="right floated">
+                                        <a>
+                                            <i class="eye icon"></i>
+                                            22 viewed
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- <div class="column">
+                            <div class="ui card centered">
+                                <div class="image">
+                                    <img src="static/images/background-stone.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">Kristy</a>
+                                    <div class="meta">
+                                    <span class="date">Joined in 2013</span>
+                                    </div>
+                                    <div class="description">
+                                    Kristy is an art director living in New York.
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <a>
+                                    <i class="user icon"></i>
+                                    22 Friends
+                                    </a>
+                                </div>
+                            </div>
+                    </div> -->
+                </div>
+
+                <br>
+                <br>
+     
+            </div>
+
+
+    
+            <br>
+            <br>
+            <br>
+            <div class="ui container">
+                <div class="ui section divider header"></div>
+            </div>
+
+            <!-- -------------------------------tags------------------------------------ -->
+            <div class="ui container center aligned my-padding-updown-medium">
+                <div class="ui grid stackable my-padding-updown-medium" style="padding-top: 4em !important;">
+                    <div class="row center aligned">
+                        <ui class="four wide column">
+                            <h1 class="ui header centered my-padding-updown-medium">Top Tags
+                                <br>
+                                <br>
+                                <a href="" class="" style="font-size: 15px; color: grey;">SEE ALL TAGS</a>
+                            </h1>
+                        </ui>
+
+                        <div class="twelve wide column">
+
+                            <!-- <a href="" class="ui labeled button" tabindex="0">
+                                <div class="ui basic blue button">
+                                    <i class="fork icon"></i> Forks
+                                </div>
+                                <div class="ui basic left pointing blue label my-label-mobile">
+                                    1,048
+                                </div>
+                            </a> -->
+                            
+                            <!-- --------------------first line-------------------------------- -->
+                            <div class="ui grid container center aligned my-padding-updown-small">
+                                
+                                <div class="five wide column left">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Algorithm
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="six wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Raspberry-pi
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- ------------------second-row--------------------------------- -->
+                                <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="six wide column">
+                                        <a href="" class="ui labeled button" tabindex="0">
+                                            <div class="ui basic blue button my-button-mobile">
+                                                <i class="tags icon"></i> Forks
+                                            </div>
+                                            <div class="ui basic left pointing blue label my-label-mobile">
+                                                1,048
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- -----------------------------third-row---------------------------------- -->
+                                <!-- <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div> -->
+
+                                <!-- ------------------------------fourth-row-------------------------------- -->
+
+                                <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="six wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="five wide column">
+                                    <a href="" class="ui labeled button" tabindex="0">
+                                        <div class="ui basic blue button my-button-mobile">
+                                            <i class="tags icon"></i> Forks
+                                        </div>
+                                        <div class="ui basic left pointing blue label my-label-mobile">
+                                            1,048
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        
+                    </div>
+                    
+                </div>
+
+
+
+            </div>
+    
+            <div class="ui container">
+                    <h4 class="ui horizontal divider header">END</h4>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+ 
         </div>
+    </div>
 
 
-    </footer>
-     -->
-        
   <footer class="ui inverted vertical segment my-footer">
         <div class="ui center aligned container">
           <div class="ui grid inverted divided stackable">
             <div class="three wide column">
                 <div class="ui link list my-padding-updown-small">
-                        <img src="http://i.imgur.com/7sxuuef.jpg" class="ui circular centered image" alt="" style="width: 120px">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" class="ui circular centered image" alt="" style="width: 120px">
                 </div>
             </div>
             <div class="six wide column">
@@ -384,7 +623,7 @@
           <div class="ui inverted section divider"></div>   
           <p>Copyright...</p>
         </div>
-      </footer>
+    </footer>
     
     
 
@@ -395,7 +634,7 @@
         (function($) {          
             $(document).ready(function(){                    
                 $(window).scroll(function(){                          
-                    if ($(this).scrollTop() > 600) {
+                    if ($(this).scrollTop() > 450) {
                         $('#menu').fadeIn(500);
                     } else {
                         $('#menu').fadeOut(500);
@@ -403,6 +642,29 @@
                 });
             });
         })(jQuery);
-        </script>
+                //------------mobile-following-menu-------------------
+        $('#my-following-header-js-mobile-show')
+            .click(function(){
+                $('.my-following-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        //-------------mobile-header-----------------
+        $('#my-header-js-mobile-show')
+            .click(function(){
+                $('.my-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+
+    </script>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+            document.getElementById("menu").style.top = "0";
+            } else {
+            document.getElementById("menu").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
 </body>
 </html>

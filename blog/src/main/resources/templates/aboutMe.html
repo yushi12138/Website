@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Me</title>
+
+
+    <link rel="stylesheet" href="../static/css/myStyleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css">
+    <!-- !!!!!!!----------------jquery always above semantic ui js file-----------------!!!!!!!!!!!1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+</head>
+<body>
+    <!-- -------------following bar----------------- -->
+    <div th:replace="_fragment :: followingMenu" class="my-following-header" id="menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu stackable" style="border-bottom: none;">
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true" alt="" class="my-header-icon" style="width: 56px !important;">
+                        <div class="item my-mobile-shown center aligned" id="my-following-header-js-mobile-show">
+                            MENU<i class="ui angle down icon"></i>
+                        </div>
+                    </a>
+    
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Home
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Sharings
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                    Projects
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">Tags</a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">About Me</a>
+                    <a class="item right my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search icon"></i>
+                        </div>
+                    </a>
+                </div>
+        </div>
+
+    </div>
+    
+    <!-------------------------------- main page ------------------------------->
+    <div class="my-page">
+    <!-- nav bar -->
+        <div th:replace="_fragment :: topMenu(5)" class="my-header-image" style="background-image: url(../static/images/background-sky.jpg);">
+            <div class="ui container">
+                
+                <div class="ui secondary pointing menu stackable">
+
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" alt="" class="my-header-icon">
+                    </a>
+                    <a class="item my-header-item my-mobile-hidden">
+                        Home
+                    </a>
+                    <a class="item my-header-item my-mobile-hidden ">
+                        Projects
+                    </a>
+                    <a class="item my-header-item my-mobile-hidden">
+                        Sharings
+                    </a>
+                    <a class="item my-header-item my-mobile-hidden">
+                        Tags
+                    </a>
+                    <a class="item my-header-item my-mobile-hidden my-header-active">
+                        About Me
+                    </a>
+                    <a class="item right my-header-item my-mobile-hidden">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search icon"></i>
+                        </div>
+                    </a>
+                    <!-- <i class="ui bars icon my-mobile-shown"></i> -->
+                    <div class="ui compact menu left my-mobile-shown my-background" >
+                            <div class="ui simple dropdown item">
+                              <i class="bars icon"></i>
+                              <div class="left menu">
+                                <a href="" class="item">Home</a>
+                                <a href="" class="item">Projects</a>
+                                <a href="" class="item">Sharings</a>
+                                <a href="" class="item">About Me</a>
+                              </div>
+                            </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    <!-- content -->
+
+
+    
+    <div class="my-projects my-padding-updown-large" >
+        <div class="ui container" >
+            <br>
+            <br>
+            <br>
+
+            <!-- ----------------------------------blog------------------------------- -->
+            <div class="ui grid stackable">
+                <div class="row center aligned">
+                    <!-- --------------left---------------- -->
+                    <div class="eleven wide column">
+                        <div class="ui segment">
+                            <div class="my-overlay-item">
+                                <img class="my-post-image" src="../static/images/squirrel.jpg" th:src="@{/images/squirrel.jpg}">
+                                <a href="" class="overlay">
+                                    <div class="my-overlay-button">
+                                        <i class="ui icon angle right large"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- --------------right--------------- -->
+                    <div class="five wide column">
+
+                        <div class="ui vertical segment">
+                                <h3 class="ui item dividing small grey header">ABOUT ME</h3>
+                                <p class="my-text">
+                                    Yu Shi, mainly interested in software developing, computer vision, embedded system.
+                                    <br>
+                                    <br>
+                                    Foolish &nbsp && &nbsp Hungry.
+                                </p>
+                        </div>
+                        <div class="ui vertical pointing secondary  menu" style="width:  auto !important;">
+
+                            <a class="item active left aligned" id="sidebar-dropdown-posts">
+                                RECENT FOCUS
+                            </a>
+                            <div class="ui item my-sidebar-item-posts" style="display: none;">
+                                    <div class="ui link list" th:each="o : ${blogs.content}">
+                                            <a th:href="@{/blog/{id}(id=${o.id})}" th:text="${o.title}" class="ui item">how to build a web server</a>                            
+                                    </div>
+                            </div>
+
+                            
+
+                        </div>
+
+                        <!-- <div class="ui top attached segment">
+                            <div class="ui middle aligned row grid">
+                                <div class="eleven wide column">
+                                    <h3 class="ui header grey">Projects</h3>
+                                </div>
+                                
+                                <div class="right aligned five wide column">
+                                    <h3 class="ui teal header to-inline-block" >Num</h2>
+                                </div>
+            
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+    
+            </div>
+            <!-- <br>
+            <br>
+            <br> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <!-- -------------------------------footer------------------------------------ -->
+    
+
+        
+  <footer th:replace="_fragment :: footer" class="ui inverted vertical segment my-footer">
+        <div class="ui center aligned container">
+          <div class="ui grid inverted divided stackable">
+            <div class="three wide column">
+                <div class="ui link list my-padding-updown-small">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" class="ui circular centered image" alt="" style="width: 120px">
+                </div>
+            </div>
+            <div class="six wide column">
+              <h4 class="ui inverted header my-padding-updown-small">New</h4>
+              <div class="ui inverted link list">
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header my-padding-updown-small">Contact</h4>
+                <div class="ui inverted link list my-padding-updown-small">
+                    <a href="" class="item my-contact-icon"><i class="mail icon large centered"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="github icon large "></i></a>
+                    <a href="" class="item my-contact-icon"><i class="linkedin icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="twitter icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="facebook icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="wechat icon large"></i></a>
+                </div>
+            </div>
+          </div>
+    
+          <div class="ui inverted section divider"></div>   
+          <p>Copyright...</p>
+        </div>
+    </footer>
+    
+    
+
+    <!-- <script>
+
+    </script> -->
+    <script type="text/javascript">
+        // --------------drop-down------------------
+        (function($) {          
+            $(document).ready(function(){                    
+                $(window).scroll(function(){                          
+                    if ($(this).scrollTop() > 450) {
+                        $('#menu').fadeIn(500);
+                    } else {
+                        $('#menu').fadeOut(500);
+                    }
+                });
+                $('.link.example .dropdown')
+                .dropdown({
+                    action: 'hide'
+                });
+              
+            });
+        })(jQuery);
+        //------------ sidebar-click----------------
+        $('#sidebar-dropdown-posts')
+            .click(function(){
+                $('.my-sidebar-item-posts').toggle();
+        });
+        $('#sidebar-dropdown-tags')
+            .click(function(){
+                $('.my-sidebar-item-tags').toggle();
+        });
+
+        //------------mobile-following-menu-------------------
+        $('#my-following-header-js-mobile-show')
+            .click(function(){
+                $('.my-following-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        //-------------mobile-header-----------------
+        $('#my-header-js-mobile-show')
+            .click(function(){
+                $('.my-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+
+        
+    </script>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+            document.getElementById("menu").style.top = "0";
+            } else {
+            document.getElementById("menu").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+</html>

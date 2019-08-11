@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yu's</title>
+
+    <link rel="stylesheet" href="../../static/css/myStyleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+
+    <style type="text/css">
+        body > .grid {
+          height: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="ui middle aligned center aligned grid my-content-bg" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/background/background-sky.jpg?raw=true);">
+        <div class="column" style="max-width: 450px;">
+          <h2 class="ui blue image header">
+            <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" class="ui image">
+            <div class="content" style="padding-top: 0.5em !important;">
+              Log-in to your account
+            </div>
+          </h2>
+          <form class="ui large form" action="" method="post">
+            <div class="ui stacked segment">
+           
+
+              <div class="required field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input type="text" name="email" placeholder="E-mail address">
+                </div>
+              </div>
+              <div class=" required field">
+                <div class="ui left icon input">
+                  <i class="lock icon"></i>
+                  <input type="password" name="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="ui fluid large submit blue button">Login</div>
+            </div>
+      
+            <div class="ui error message"></div>
+      
+          </form>
+      
+          <div class="ui message">
+            New to us? <a href="#">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+            $(document)
+                .ready(function() {
+                $('.ui.form')
+                    .form({
+                        fields: {
+                            title:{
+                        identifier:'title',
+                        rules:[{
+                            type:'empty',
+                            prompt:'please input the title'
+                        }]
+                        },
+                        email: {
+                        identifier  : 'email',
+                        rules: [
+                            {
+                            type   : 'empty',
+                            prompt : 'Please enter your e-mail'
+                            }
+                            // ,{
+                            // type   : 'email',
+                            // prompt : 'Please enter a valid e-mail'
+                            // }
+                        ]
+                        },
+                        password: {
+                        identifier  : 'password',
+                        rules: [
+                            {
+                            type   : 'empty',
+                            prompt : 'Please enter your password'
+                            }
+                            // ,{
+                            // type   : 'length[6]',
+                            // prompt : 'Your password must be at least 6 characters'
+                            // }
+                        ]}
+                    }
+                });
+            });
+
+
+          </script>
+</body>
+</html>

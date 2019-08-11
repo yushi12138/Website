@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragment_admin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yu's</title>
+   	<link rel="shortcut icon" type="icon" href="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true">
+
+    <link rel="stylesheet" href="../../static/css/myStyleSheet.css" th:href="@{/css/myStyleSheet.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+    <!-- !!!!!!!----------------jquery always above semantic ui js file-----------------!!!!!!!!!!!1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <!-- ----------editor-markdown------------ -->
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+</head>
+<!-- ----------load at certain position to avoid the markdown editor cursor-->
+<body onLoad="window.scroll(0, 0)">
+    <!-- -------------following bar----------------- -->
+    <div th:replace="admin/fragment_admin :: followingMenu" class="my-following-header" id="menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu stackable" style="border-bottom: none;">
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true" alt="" class="my-header-icon" style="width: 56px !important;">
+                        <div class="item my-mobile-shown center aligned" id="my-following-header-js-mobile-show">
+                            MENU<i class="ui angle down icon"></i>
+                        </div>
+                    </a>
+    
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Management
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                   	Editor
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                    About Me
+                    </a>
+                    <a class="item right my-following-header-js-click-show my-mobile-hidden" style="padding: 1px 1px !important;">
+                        <div class="ui simple pointing dropdown item" style="padding: 1px 100px !important;">
+                            <img class="my-header-avatar" src="https://github.com/yushi12138/resourcesOL/blob/master/images/avatar/squirrel.jpg?raw=true">
+                            <div class="menu">
+                                <a href="" class="item">Yu Shi</a>
+                                <a href="" class="item">yushi12138@gmail.com</a>
+                                <a href="" class="item">Log Out</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        </div>
+
+    </div>
+    
+
+    <!-------------------------------- main page ------------------------------->
+    <div class="my-page">
+    <!-- nav bar -->
+        <div th:replace="admin/fragment_admin :: topMenu(3)" class="my-header-image" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/background/cloud2.jpg?raw=true);">
+            <div class="ui container">
+                
+                <div class="ui secondary pointing menu stackable">
+
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" alt="" class="my-header-icon">
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Mangement
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Editor
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        About Me
+                    </a>
+                    <a class="item right my-header-item my-mobile-hidden">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search icon"></i>
+                        </div>
+                    </a>
+                    <!-- <i class="ui bars icon my-mobile-shown"></i> -->
+                    <div class="ui compact menu left my-mobile-menu-shown my-background" >
+                            <div class="ui simple dropdown item">
+                              <i class="bars icon"></i>
+                              <div class="left menu">
+                                <a href="" class="item">Management</a>
+                                <a href="" class="item">Editor</a>
+                                <a href="" class="item">About Me</a>
+                              </div>
+                            </div>
+                    </div>
+
+                </div>
+
+            <h1 style="color: white; font-size: 50px; position: absolute; top:300px; left: 540px; z-index:1 !important;">Welcome Home ~</h1>
+
+            </div>
+            
+
+        </div>
+    <!-- content -->
+
+        <!-- <div class="my-content-bg" style="background-image: url(../static/images/texture-white-black.jpeg) !important;"> -->
+        <div class="my-content-bg" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/texture/texture-white-black.jpeg?raw=true) !important;">
+            <br>
+ 
+            <div  class="ui container" th:classappend="my-container-medium">
+                    <!-- ------------menu--------------- -->
+                    <div class="ui top attached tabular menu">
+                        <a th:href="@{/admin/blogs}" class="item">
+                            Blogs
+                        </a>
+                        <a th:href="@{/admin/tags}" class="item" >
+                            Tags
+                        </a>
+                        <a th:href="@{/admin/editor}" class="item active" >
+                            Editor
+                        </a>
+                    </div>
+        
+        
+        
+                   <!-- ---------------------------publish-------------------------- -->
+                   <div  id="myPublish" >
+                        <div class="ui bottom attached segment">
+                            <form id="blogForm" method="post" class="ui form" th:action="@{/admin/editor}" th:object="${blog}">
+                            	<input type="hidden" name="published">
+                            	<input type="hidden" name="id" th:value="*{id}">
+        
+                                <div class=" required field">
+                                    <div class="ui left action icon input">
+        
+                                        <div class="ui selection basic floating dropdown button compact blue">
+                                            <input type="hidden" name="flag" th:value="*{flag}" value="Original">
+                                            <div class="text">select</div>
+                                            <i class="dropdown icon"></i>
+                                            <div class="menu">
+                                                <div class="item" data-value="Original">Original &nbsp;</div>    
+                                                <div class="item" data-value="Reprint">Reprint</div>
+                                            </div>
+                                        </div>
+                                        <!-- -----------title------------ -->
+                                        <input type="text" name="title" th:value="*{title}" placeholder="Title">
+                                    </div>
+                                </div>
+                                <!-- ------------blog-image------------- -->
+                                <div class="required field">
+                                        <div class="ui left labeled input">
+                                            <div class="ui basic label">Description</div>
+                                            <input type="text" name="description" th:value="*{description}" placeholder="Blog Description...">
+                                        </div>
+                                    </div>
+                                <!-- ------------editor-------------- -->
+                                <div class="required field">
+                                    <div id="md-content" style="z-index: 1 !important; background-color: white !important; opacity: 1 !important;">
+                                        <textarea name="content" th:text="*{content}" style="display: none;"></textarea>
+                                    </div>
+                                </div>
+                                <!-- ------------blog-image------------- -->
+                                <div class="required field">
+                                    <div class="ui left labeled input">
+                                        <div class="ui basic label">Index Image</div>
+                                        <input type="text" name="indexImage" th:value="*{indexImage}" placeholder="Index Image link...">
+                                    </div>
+                                </div>
+                                <!-- ------------category/tags------------- -->
+                                <div class="two fields">
+                                    <!-- ------------category------------- -->
+                                    <div class="ui field">
+                                        <div class="ui labeled left action input secondary">
+                                            <div class="ui basic label ">
+                                                Category
+                                            </div>
+                                            <div class="ui selection floating dropdown input">
+                                                <input type="hidden"  name="category.id" th:value="*{category}!=null ? *{category.id}">
+                                                <div class="text">Select...</div>
+                                                <i class="dropdown icon"></i>
+		                                        <div class="menu">
+		                                            <div th:each="o : ${category}" th:text="${o.name == null} ? 'Category(Null)' : ${o.name}" th:data-value="${o.id}" class="item">A</div>
+		                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ------------tags------------- -->
+                                    <div class="ui field">
+                                        <div class="ui right action icon input compact">
+                                            <div class="ui selection basic dropdown multiple search">
+                                                <input type="hidden" name="tagIds" th:value="*{tagIds}">
+                                                <div class="text">Tags &nbsp &nbsp &nbsp</div>
+                                                <i class="dropdown icon"></i>
+        
+		                                        <div class="menu">
+		                                            <div th:each="tag : ${tags}" th:text="${tag.name == null} ? 'Category(Null)' : ${tag.name}" th:data-value="${tag.id}" class="item">A</div>
+		                                        </div>
+                                            </div>
+                                            <a th:href="@{/admin/tags}" href="#" class="ui button basic">Add New Tag</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline fields">
+                                    <div class="field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" id="shareInfo" name="shareInfo" th:checked="*{shareInfo}"class="hidden">
+                                            <label for="shareInfo">Share Info</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui checkbox checked">
+                                            <input type="checkbox" checked="" id="comment" name="comment" th:checked="*{comment}" class="">
+                                            <label for="comment">Comment</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui checked checkbox">
+                                            <input type="checkbox" checked="" id="recommended" name="recommended" th:checked="*{recommended}"class="hidden">
+                                            <label for="recommended">Recommended</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ------------form-validation-error-message--------- -->
+                                <div class="ui error message"></div>
+                                <!-- ------------submit-button---------------- -->
+                                <div class="ui right aligned container">
+                                    <button class="ui button" type="button" onclick="window.history.go(-1)">Return</button>
+                                    <button id="saveButton" type="button" class="ui grey button">Save</button>
+                                    <button id="publishButton" type="button" class="ui blue button">Publish</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                
+                    </div>
+        
+        
+                </div>
+            <br>
+            <br>
+            <!-- <div class="ui container">
+                    <h4 class="ui horizontal divider header">END</h4>
+            </div> -->
+            
+        
+ 
+        </div>
+    </div>
+
+
+  <footer th:replace="admin/fragment_admin :: footer" class="ui inverted vertical segment my-footer">
+        <div class="ui center aligned container">
+          <div class="ui grid inverted divided stackable">
+            <div class="three wide column">
+                <div class="ui link list my-padding-updown-small">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" class="ui circular centered image" alt="" style="width: 120px">
+                </div>
+            </div>
+            <div class="six wide column">
+              <h4 class="ui inverted header my-padding-updown-small">New</h4>
+              <div class="ui inverted link list">
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header my-padding-updown-small">Contact</h4>
+                <div class="ui inverted link list my-padding-updown-small">
+                    <a href="" class="item my-contact-icon"><i class="mail icon large centered"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="github icon large "></i></a>
+                    <a href="" class="item my-contact-icon"><i class="linkedin icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="twitter icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="facebook icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="wechat icon large"></i></a>
+                </div>
+            </div>
+          </div>
+    
+          <div class="ui inverted section divider"></div>   
+          <p>Copyright...</p>
+        </div>
+    </footer>
+    
+    
+
+    <!-- <script>
+
+    </script> -->
+    <script type="text/javascript" th:inline="javascript">
+        // --------------scroll-down------------------
+        $(document).ready(function(){
+                
+            $(window).scroll(function(){                          
+                if ($(this).scrollTop() > 450) {
+                    $('#menu').fadeIn(500);
+                } else {
+                    $('#menu').fadeOut(500);
+                }
+            });
+            $('.link.example .dropdown')
+            .dropdown({
+                action: 'hide'
+            });
+            
+        });
+        // ------------ sidebar-click----------------
+        $('#sidebar-dropdown-posts')
+            .click(function(){
+                $('.my-sidebar-item-posts').toggle();
+        });
+        $('#sidebar-dropdown-tags')
+            .click(function(){
+                $('.my-sidebar-item-tags').toggle();
+        });
+
+        //------------mobile-following-menu-------------------
+        $('#my-following-header-js-mobile-show')
+            .click(function(){
+                $('.my-following-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        //-------------mobile-header-----------------
+        $('#my-header-js-mobile-show')
+            .click(function(){
+                $('.my-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        // -------------dropdown-------------------
+        $('.ui.dropdown').dropdown(
+            {on:'hover'}
+        );
+        //-------------change the content in page--------------                 
+
+        $('#myPublishClick')
+            .click(function(){
+                
+                $('#myBlogListClick').removeClass("active");
+                $('#myPublishClick').addClass("active");
+
+
+                $('#myBlogList').css("display","none");
+                $('#myPublish').css("display","block");
+        });
+
+        
+        $('#myBlogListClick')
+            .click(function(){
+                $('#myPublishClick').removeClass("active");
+                $('#myBlogListClick').addClass("active");
+                $('#myPublish').css("display","none");
+
+                $('#myBlogList').css("display","block");
+
+        });
+        // -------------input-validation-------------
+        $('.ui.form').form({
+            fields:{
+                title:{
+                    identifier:'title',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the title'
+                    }]
+                },
+                description:{
+                    identifier:'description',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the blog description'
+                    }]
+                },
+                indexImage:{
+                    identifier:'indexImage',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input href of index image'
+                    }]
+                },
+                editor:{
+                    identifier:'content',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the content'
+                    }]
+                },
+
+            }
+        });
+        // <!-- ------------markdown-editor-js------------- -->
+        $(document).ready(function(){
+            
+            // use setTimeout(fuction(),3000) to slow down the markdown editor loading, 
+            // and avoiding jump to the cursor
+            var testEditor;
+            $(setTimeout(function() {
+                testEditor = editormd("md-content", {
+                    width   : "100%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : /*[[@{/lib/editormd/lib/}]]*/
+                });
+            }, 2000));
+        });
+
+
+
+    </script>
+    
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+            document.getElementById("menu").style.top = "0";
+            } else {
+            document.getElementById("menu").style.top = "-65px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    
+    <!-- ------save/publish-button-------- -->
+    <script>
+    $('#saveButton').click(function(){
+    	$('[name="published"]').val(false);
+    	$('#blogForm').submit();
+    });
+    $('#publishButton').click(function(){
+    	$('[name="published"]').val(true);
+    	$('#blogForm').submit();
+    });
+    
+    </script>
+</body>
+</html>

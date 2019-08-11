@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragment_admin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yu's</title>
+   	<link rel="shortcut icon" type="icon" href="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true">
+
+    <link rel="stylesheet" href="../../static/css/myStyleSheet.css" th:href="@{/css/myStyleSheet.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+    <!-- !!!!!!!----------------jquery always above semantic ui js file-----------------!!!!!!!!!!!1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <!-- ----------editor-markdown------------ -->
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+</head>
+<!-- ----------load at certain position to avoid the markdown editor cursor-->
+<body onLoad="window.scroll(0, 0)">
+    <!-- -------------following bar----------------- -->
+    <div th:replace="admin/fragment_admin :: followingMenu" class="my-following-header" id="menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu stackable" style="border-bottom: none;">
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true" alt="" class="my-header-icon" style="width: 56px !important;">
+                        <div class="item my-mobile-shown center aligned" id="my-following-header-js-mobile-show">
+                            MENU<i class="ui angle down icon"></i>
+                        </div>
+                    </a>
+    
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Management
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                   	Editor
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                    About Me
+                    </a>
+                    <a class="item right my-following-header-js-click-show my-mobile-hidden" style="padding: 1px 1px !important;">
+                        <div class="ui simple pointing dropdown item" style="padding: 1px 100px !important;">
+                            <img class="my-header-avatar" src="https://github.com/yushi12138/resourcesOL/blob/master/images/avatar/squirrel.jpg?raw=true">
+                            <div class="menu">
+                                <a href="" class="item">Yu Shi</a>
+                                <a href="" class="item">yushi12138@gmail.com</a>
+                                <a href="" class="item">Log Out</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        </div>
+
+    </div>
+    
+
+    <!-------------------------------- main page ------------------------------->
+    <div class="my-page">
+    <!-- nav bar -->
+        <div th:replace="admin/fragment_admin :: topMenu(1)" class="my-header-image" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/background/cloud2.jpg?raw=true);">
+            <div class="ui container">
+                
+                <div class="ui secondary pointing menu stackable">
+
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" alt="" class="my-header-icon">
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Mangement
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Editor
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        About Me
+                    </a>
+                    <a class="item right my-header-item my-mobile-hidden">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search icon"></i>
+                        </div>
+                    </a>
+                    <!-- <i class="ui bars icon my-mobile-shown"></i> -->
+                    <div class="ui compact menu left my-mobile-menu-shown my-background" >
+                            <div class="ui simple dropdown item">
+                              <i class="bars icon"></i>
+                              <div class="left menu">
+                                <a href="" class="item">Management</a>
+                                <a href="" class="item">Editor</a>
+                                <a href="" class="item">About Me</a>
+                              </div>
+                            </div>
+                    </div>
+
+                </div>
+
+            <h1 style="color: white; font-size: 50px; position: absolute; top:300px; left: 540px; z-index:1 !important;">Welcome Home ~</h1>
+
+            </div>
+            
+
+        </div>
+    <!-- content -->
+
+        <!-- <div class="my-content-bg" style="background-image: url(../static/images/texture-white-black.jpeg) !important;"> -->
+        <div class="my-content-bg" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/texture/texture-white-black.jpeg?raw=true) !important;">
+            <br>
+ 
+            <div class="ui container">
+            
+                           <!-- ------------menu--------------- -->
+                    <div class="ui top attached tabular menu">
+        
+                        <div class="item" id="my-js-menu-one">
+                            Sharings
+                        </div>
+                        <div class="item" id="my-js-menu-two">
+                            Projects
+                        </div>
+                        <div class="item active" id="my-js-menu-three" method="get" href="" th:href="@{/admin/tags}">
+                            Tags
+                        </div>
+                    </div>
+        
+  
+                    <!-- ---------------------------Sharings-------------------------- -->
+                   <div  id="my-js-content-one"  style="display: none;">
+                        <div class="ui attached segment">
+                            <form class="ui form" style="margin-top: 1em !important;" method="post" th:action="@{/admin/sharings}">
+                                <div class="inline fields">
+                                    <!-- ------------title-tags------------- -->
+                                    <div class="ten wide field">
+                                        <div class="ui right action left icon input">
+                                            <i class="edit outline icon"></i>
+                                            <input type="text" placeholder="Title...">
+                                            <div class="ui selection search dropdown multiple">
+                                                <input name="sharing" type="hidden">
+                                                
+                                                <div class="default text">Tags</div>
+                                                <i class="dropdown icon"></i>
+                                                <div class="menu">
+                                                    <div class="item" data-value="angular">Angular</div>
+                                                    <div class="item" data-value="css">CSS</div>
+                                                    <div class="item" data-value="design">Graphic Design</div>
+                                                    <div class="item" data-value="ember">Ember</div>
+                                                    <div class="item" data-value="html">HTML</div>
+                                                    <div class="item" data-value="ia">Information Architecture</div>
+                                                    <div class="item" data-value="javascript">Javascript</div>
+                                                    <div class="item" data-value="mech">Mechanical Engineering</div>
+                                                    <div class="item" data-value="meteor">Meteor</div>
+                                                    <div class="item" data-value="node">NodeJS</div>
+                                                    <div class="item" data-value="plumbing">Plumbing</div>
+                                                    <div class="item" data-value="python">Python</div>
+                                                    <div class="item" data-value="rails">Rails</div>
+                                                    <div class="item" data-value="react">React</div>
+                                                    <div class="item" data-value="repair">Kitchen Repair</div>
+                                                    <div class="item" data-value="ruby">Ruby</div>
+                                                    <div class="item" data-value="ui">UI Design</div>
+                                                    <div class="item" data-value="ux">User Experience</div>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                    </div>
+                                    <!-- ------------recommended------------- -->
+                                    <div class="three wide field">
+                                        <div class="ui checkbox">
+                                            <input id="check-isRec" type="checkbox">
+                                            <label for="example-id">Recommended</label>
+                                        </div>
+                                    </div>
+                                    <div class="three wide field">
+                                        <button href="" class="ui inverted olive button right floated"> Search...<i class="search icon right aligned"></i></button>
+                                    </div>
+                                </div>
+                                <div class="ui error mini message"></div>
+                            
+                            </form>
+                        </div>
+                        <div class="ui segment">
+        
+                            <table class="ui very basic selectable table">
+                                <thead>
+                                    <tr>
+                                    <th class="center aligned">Title</th>
+                                    <th>Category</th>
+                                    <th>Recommended</th>
+                                    <th>Update Time</th>
+                                    <th class="center aligned">Operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>Embedded System auto car</td>
+                                    <td>Approved</td>
+                                    <td>None</td>
+                                    <td>None</td>
+            
+                                    <td class="right aligned">
+                                        <a href="" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>Jamie</td>
+                                    <td>Approved</td>
+                                    <td>None</td>
+            
+                                    <td>Requires call</td>
+                                    <td class="right aligned">
+                                        <a href="" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>Jill</td>
+                                    <td>Denied</td>
+                                    <td>None</td>
+            
+                                    <td>None</td>
+                                    <td class="right aligned">
+                                        <a href="" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6">
+                                            <div class="ui pagination menu">
+                                                <a href="" class="item"><i class="ui angle double left icon"></i></a>
+                                                <a href="" class="item"><i class="ui angle double right icon"></i></a>
+            
+                                            </div>
+                                            <a href="" class="ui inverted purple button right floated"> Publish</a>
+                                            <a href="" class="ui inverted violet button right floated"> &nbsp Add &nbsp&nbsp</a>
+            
+                                            <!-- <a href="" class="ui inverted violet button right floated"> &nbsp &nbsp Add &nbsp &nbsp</a> -->
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+    
+         
+            
+                    <!-- ----------------------------------projects------------------------------- -->
+                    <div id="my-js-content-two" style="display: none;">
+                        <div class="ui attached segment">
+                            <form class="ui form" style="margin-top: 1em !important;" method="post" th:action="@{/admin/projects}">
+                                <div class="inline fields">
+                                    <!-- ------------title-tags------------- -->
+                                    <div class="ten wide field">
+                                        <div class="ui right action left icon input">
+                                            <i class="edit outline icon"></i>
+                                            <input type="text" placeholder="Title...">
+                                            <div class="ui selection search dropdown multiple">
+                                                <input name="project" type="hidden">
+                                                
+                                                <div class="default text">Tags</div>
+                                                <i class="dropdown icon"></i>
+                                                <div class="menu">
+                                                    <div class="item" data-value="angular">Angular</div>
+                                                    <div class="item" data-value="css">CSS</div>
+                                                    <div class="item" data-value="design">Graphic Design</div>
+                                                    <div class="item" data-value="ember">Ember</div>
+                                                    <div class="item" data-value="html">HTML</div>
+                                                    <div class="item" data-value="ia">Information Architecture</div>
+                                                    <div class="item" data-value="javascript">Javascript</div>
+                                                    <div class="item" data-value="mech">Mechanical Engineering</div>
+                                                    <div class="item" data-value="meteor">Meteor</div>
+                                                    <div class="item" data-value="node">NodeJS</div>
+                                                    <div class="item" data-value="plumbing">Plumbing</div>
+                                                    <div class="item" data-value="python">Python</div>
+                                                    <div class="item" data-value="rails">Rails</div>
+                                                    <div class="item" data-value="react">React</div>
+                                                    <div class="item" data-value="repair">Kitchen Repair</div>
+                                                    <div class="item" data-value="ruby">Ruby</div>
+                                                    <div class="item" data-value="ui">UI Design</div>
+                                                    <div class="item" data-value="ux">User Experience</div>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                    </div>
+                                    <!-- ------------recommended------------- -->
+                                    <div class="three wide field">
+                                        <div class="ui checkbox">
+                                            <input id="check-isRec" type="checkbox">
+                                            <label for="example-id">Recommended</label>
+                                        </div>
+                                    </div>
+                                    <div class="three wide field">
+                                        <button href="" class="ui inverted olive button right floated"> Search...<i class="search icon right aligned"></i></button>
+                                    </div>
+                                </div>
+                                <div class="ui error mini message"></div>
+                            
+                            </form>
+                        </div>
+                        <div class="ui segment">
+        
+                            <table class="ui very basic selectable table">
+                                <thead>
+                                    <tr>
+                                    <th class="center aligned">Title</th>
+                                    <th>Category</th>
+                                    <th>Recommended</th>
+                                    <th>Update Time</th>
+                                    <th class="center aligned">Operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>How to build a web server using raspberry pi</td>
+                                    <td>Approved</td>
+                                    <td>None</td>
+                                    <td>None</td>
+            
+                                    <td class="right aligned">
+                                        <a href="" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>Jamie</td>
+                                    <td>Approved</td>
+                                    <td>None</td>
+            
+                                    <td>Requires call</td>
+                                    <td class="right aligned">
+                                        <a href="" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>Jill</td>
+                                    <td>Denied</td>
+                                    <td>None</td>
+            
+                                    <td>None</td>
+                                    <td class="right aligned">
+                                        <a href="" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6">
+                                            <div class="ui pagination menu">
+                                                <a href="" class="item"><i class="ui angle double left icon"></i></a>
+                                                <a href="" class="item"><i class="ui angle double right icon"></i></a>
+            
+                                            </div>
+                                            <a href="" class="ui inverted purple button right floated"> Publish</a>
+                                            <a href="" class="ui inverted violet button right floated"> &nbsp Add &nbsp&nbsp</a>
+            
+                                            <!-- <a href="" class="ui inverted violet button right floated"> &nbsp &nbsp Add &nbsp &nbsp</a> -->
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+        
+                    <!-- ----------------------------------Tags------------------------------- -->
+                    <div id="my-js-content-three">
+                        <div class="ui attached segment">
+                            <form class="ui form" style="margin-top: 1em !important;" method="post" th:action="@{/admin/tags}">
+                                <div class="inline fields">
+                                    <!-- ------------title-tags------------- -->
+                                    <div class="ten wide field">
+                                        <div class="ui right action left icon input">
+                                            <i class="edit outline icon"></i>
+                                            <input type="text" placeholder="Tag Name...">
+                                            <div class="ui selection search dropdown multiple">
+                                                <input name="tag" type="hidden">
+                                                
+                                                <div class="default text">Parent Tag</div>
+                                                <i class="dropdown icon"></i>
+                                                <div class="menu">
+                                                    <div class="item" data-value="angular">Angular</div>
+                                                    <div class="item" data-value="css">CSS</div>
+                                                    <div class="item" data-value="design">Graphic Design</div>
+                                                    <div class="item" data-value="ember">Ember</div>
+                                                    <div class="item" data-value="html">HTML</div>
+                                                    <div class="item" data-value="ia">Information Architecture</div>
+                                                    <div class="item" data-value="javascript">Javascript</div>
+                                                    <div class="item" data-value="mech">Mechanical Engineering</div>
+                                                    <div class="item" data-value="meteor">Meteor</div>
+                                                    <div class="item" data-value="node">NodeJS</div>
+                                                    <div class="item" data-value="plumbing">Plumbing</div>
+                                                    <div class="item" data-value="python">Python</div>
+                                                    <div class="item" data-value="rails">Rails</div>
+                                                    <div class="item" data-value="react">React</div>
+                                                    <div class="item" data-value="repair">Kitchen Repair</div>
+                                                    <div class="item" data-value="ruby">Ruby</div>
+                                                    <div class="item" data-value="ui">UI Design</div>
+                                                    <div class="item" data-value="ux">User Experience</div>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                    </div>
+                                    <!-- ------------recommended------------- -->
+                                    <!--
+                                    <div class="three wide field">
+                                        <div class="ui checkbox">
+                                            <input id="check-isRec" type="checkbox">
+                                            <label for="example-id">Tag Family</label>
+                                        </div>
+                                    </div>
+                                    -->
+                                    <div class="three wide field">
+                                            <button th:href="@{/admin/tags/input}" href="" class="ui inverted violet button right floated"> &nbsp&nbsp Add &nbsp&nbsp</button>
+											<!-- <a href="" class="ui inverted purple button right floated"> Return</a>
+											 -->                                            
+                                    </div>
+                       
+                                </div>
+                                
+                                <div class="ui error mini message"></div>                              
+                            </form>
+                        </div>
+                        <div class="ui segment">
+        
+                            <table class="ui very basic selectable table">
+                                <thead>
+                                    <tr>
+                                    <th></th>
+                                    <th class="center aligned">Tag Name</th>
+                                    <th class="right aligned">Operation &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="tag,iterStat : ${page.content}">
+                                    	<td th:text="${iterStat.count}">1</td>
+	                                    <td th:text="${tag.name}">Algorithm</td>
+	            
+	                                    <td class="right aligned">
+	                                        <a href="" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui inverted brown button right floated">Delete &nbsp</a>
+	                                       	<a href="" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui inverted blue button right floated">  &nbsp&nbsp Edit &nbsp&nbsp </a>
+	                                       
+	                                    </td>
+                                    </tr>
+                                    
+
+  
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6">
+                                            <div class="ui pagination menu">
+                                                <a th:href="@{/admin/tags(page=${page.number}-1)}" href="" class="item"><i class="ui angle double left icon"></i></a>
+                                                <a th:href="@{/admin/tags(page=${page.number}+1)}" href="" class="item"><i class="ui angle double right icon"></i></a>
+            
+                                            </div>
+                                            <a href="" class="ui inverted purple button right floated"> Publish</a>
+                                            <a href="" class="ui inverted violet button right floated"> &nbsp&nbsp Add &nbsp&nbsp</a>
+            
+                                            <!-- <a href="" class="ui inverted violet button right floated"> &nbsp &nbsp Add &nbsp &nbsp</a> -->
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+        
+        
+			        <br>
+			        <br>
+			        <br>
+			        <br>
+			        <br>
+			      
+        
+ 
+        </div>
+    </div>
+
+
+  <footer th:replace="admin/fragment_admin :: footer" class="ui inverted vertical segment my-footer">
+        <div class="ui center aligned container">
+          <div class="ui grid inverted divided stackable">
+            <div class="three wide column">
+                <div class="ui link list my-padding-updown-small">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" class="ui circular centered image" alt="" style="width: 120px">
+                </div>
+            </div>
+            <div class="six wide column">
+              <h4 class="ui inverted header my-padding-updown-small">New</h4>
+              <div class="ui inverted link list">
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header my-padding-updown-small">Contact</h4>
+                <div class="ui inverted link list my-padding-updown-small">
+                    <a href="" class="item my-contact-icon"><i class="mail icon large centered"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="github icon large "></i></a>
+                    <a href="" class="item my-contact-icon"><i class="linkedin icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="twitter icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="facebook icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="wechat icon large"></i></a>
+                </div>
+            </div>
+          </div>
+    
+          <div class="ui inverted section divider"></div>   
+          <p>Copyright...</p>
+        </div>
+    </footer>
+    
+    
+
+    <!-- <script>
+
+    </script> -->
+    <script type="text/javascript" th:inline="javascript">
+        // --------------scroll-down------------------
+        $(document).ready(function(){
+                
+            $(window).scroll(function(){                          
+                if ($(this).scrollTop() > 450) {
+                    $('#menu').fadeIn(500);
+                } else {
+                    $('#menu').fadeOut(500);
+                }
+            });
+            $('.link.example .dropdown')
+            .dropdown({
+                action: 'hide'
+            });
+            
+        });
+        // ------------ sidebar-click----------------
+        $('#sidebar-dropdown-posts')
+            .click(function(){
+                $('.my-sidebar-item-posts').toggle();
+        });
+        $('#sidebar-dropdown-tags')
+            .click(function(){
+                $('.my-sidebar-item-tags').toggle();
+        });
+
+        //------------mobile-following-menu-------------------
+        $('#my-following-header-js-mobile-show')
+            .click(function(){
+                $('.my-following-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        //-------------mobile-header-----------------
+        $('#my-header-js-mobile-show')
+            .click(function(){
+                $('.my-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        // -------------dropdown-------------------
+        $('.ui.dropdown').dropdown(
+            {on:'hover'}
+        );
+        //-------------change the content in page--------------                 
+
+
+        $('#my-js-menu-one')
+            .click(function(){
+                $('#my-js-menu-one').addClass("active");
+
+                if ($('#my-js-menu-two').hasClass("active"))
+                    $('#my-js-menu-two').removeClass("active");
+                if ($('#my-js-menu-three').hasClass("active"))
+                    $('#my-js-menu-three').removeClass("active");
+
+                $('#my-js-content-one').css("display","block");
+                $('#my-js-content-two').css("display","none");
+                $('#my-js-content-three').css("display","none");
+        });
+
+        
+        $('#my-js-menu-two')
+            .click(function(){
+                $('#my-js-menu-two').addClass("active");
+
+                if ($('#my-js-menu-one').hasClass("active"))
+                    $('#my-js-menu-one').removeClass("active");
+                if ($('#my-js-menu-three').hasClass("active"))
+                    $('#my-js-menu-three').removeClass("active");
+
+                $('#my-js-content-one').css("display","none");
+                $('#my-js-content-two').css("display","block");
+                $('#my-js-content-three').css("display","none");
+
+
+        });
+        $('#my-js-menu-three')
+            .click(function(){
+                $('#my-js-menu-three').addClass("active");
+                
+                if ($('#my-js-menu-one').hasClass("active"))
+                    $('#my-js-menu-one').removeClass("active");
+                if ($('#my-js-menu-two').hasClass("active"))
+                    $('#my-js-menu-two').removeClass("active");
+
+                $('#my-js-content-one').css("display","none");
+                $('#my-js-content-two').css("display","none");
+                $('#my-js-content-three').css("display","block");
+
+        });
+        // -------------input-validation-------------
+        $('.ui.form').form({
+            fields:{
+                tag:{
+                    identifier:'tag',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the tag'
+                    }]
+                },
+                project:{
+                    identifier:'project',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the project'
+                    }]
+                },
+                sharing:{
+                    identifier:'sharing',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the sharing'
+                    }]
+                }
+            }
+        });
+        // <!-- ------------markdown-editor-js------------- -->
+        $(document).ready(function(){
+            
+            // use setTimeout(fuction(),3000) to slow down the markdown editor loading, 
+            // and avoiding jump to the cursor
+            var testEditor;
+            $(setTimeout(function() {
+                testEditor = editormd("md-content", {
+                    width   : "100%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : /*[[@{/lib/editormd/lib/}]]*/
+                });
+            }, 2500));
+        });
+
+
+
+    </script>
+    
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+            document.getElementById("menu").style.top = "0";
+            } else {
+            document.getElementById("menu").style.top = "-65px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+</html>

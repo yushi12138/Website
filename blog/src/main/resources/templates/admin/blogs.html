@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/fragment_admin :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yu's</title>
+   	<link rel="shortcut icon" type="icon" href="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true">
+
+    <link rel="stylesheet" href="../../static/css/myStyleSheet.css" th:href="@{/css/myStyleSheet.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+    <!-- !!!!!!!----------------jquery always above semantic ui js file-----------------!!!!!!!!!!!1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <!-- ----------editor-markdown------------ -->
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+</head>
+
+
+<!-- ----------load at certain position to avoid the markdown editor cursor-->
+<body>
+    <!-- -------------following bar----------------- -->
+    <div th:replace="admin/fragment_admin :: followingMenu" class="my-following-header" id="menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu stackable" style="border-bottom: none;">
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu_black.png?raw=true" alt="" class="my-header-icon" style="width: 56px !important;">
+                        <div class="item my-mobile-shown center aligned" id="my-following-header-js-mobile-show">
+                            MENU<i class="ui angle down icon"></i>
+                        </div>
+                    </a>
+    
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                    Management
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden" >
+                   	Editor
+                    </a>
+                    <a href="" class="item my-following-header-item my-following-header-js-click-show my-mobile-hidden">
+                    About Me
+                    </a>
+                    <a class="item right my-following-header-js-click-show my-mobile-hidden" style="padding: 1px 1px !important;">
+                        <div class="ui simple pointing dropdown item" style="padding: 1px 100px !important;">
+                            <img class="my-header-avatar" src="https://github.com/yushi12138/resourcesOL/blob/master/images/avatar/squirrel.jpg?raw=true">
+                            <div class="menu">
+                                <a href="" class="item">Yu Shi</a>
+                                <a href="" class="item">yushi12138@gmail.com</a>
+                                <a href="" class="item">Log Out</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        </div>
+
+    </div>
+    
+
+    <!-------------------------------- main page ------------------------------->
+    <div class="my-page">
+    <!-- nav bar -->
+        <div th:replace="admin/fragment_admin :: topMenu(2)" class="my-header-image" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/background/cloud2.jpg?raw=true);">
+            <div class="ui container">
+                
+                <div class="ui secondary pointing menu stackable">
+
+                    <a class="item" style="padding:0 !important;">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" alt="" class="my-header-icon">
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Mangement
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        Editor
+                    </a>
+                    <a href="" class="item my-header-item my-mobile-hidden">
+                        About Me
+                    </a>
+                    
+                    
+                    <a class="item right my-header-item my-mobile-hidden">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search icon"></i>
+                        </div>
+                    </a>
+                    <!-- <i class="ui bars icon my-mobile-shown"></i> -->
+                    <div class="ui compact menu left my-mobile-menu-shown my-background" >
+                            <div class="ui simple dropdown item">
+                              <i class="bars icon"></i>
+                              <div class="left menu">
+                                <a href="" class="item">Management</a>
+                                <a href="" class="item">Editor</a>
+                                <a href="" class="item">About Me</a>
+                              </div>
+                            </div>
+                    </div>
+
+                </div>
+
+            <h1 style="color: white; font-size: 50px; position: absolute; top:300px; left: 540px; z-index:1 !important;">Welcome Home ~</h1>
+
+            </div>
+            
+
+        </div>
+    <!-- content -->
+
+        <!-- <div class="my-content-bg" style="background-image: url(../static/images/texture-white-black.jpeg) !important;"> -->
+        <div class="my-content-bg" style="background-image: url(https://github.com/yushi12138/resourcesOL/blob/master/images/texture/texture-white-black.jpeg?raw=true) !important;">
+            <br>
+ 
+            <div class="ui container">
+            
+                    <!-- ------------menu--------------- -->
+                    <div th:replace="admin/fragment_admin :: subMenu(1)" class="ui top attached tabular menu">
+        
+                        <div class="item active">
+                            Blogs
+                        </div>
+                        <div class="item" >
+                            Tags
+                        </div>
+                        <div class="item" >
+                            Editor
+                        </div>
+                    </div>
+        
+                    <!-- ---------------------------Blogs-------------------------- -->
+                   <div  id="my-js-content-one">
+                        <div class="ui attached segment">
+                            <div class="ui form" style="margin-top: 1em !important;">
+                                <input type="hidden" name="page">
+                                
+                                <div class="inline fields">
+                                
+                                   	<div class="four wide field">
+	                                    <div class="ui selection search dropdown">
+	                                        <input name="categoryId" type="hidden">	                                        
+	                                        <div class="default text clear example">Type</div>
+	                                        <i class="dropdown icon"></i>
+	                                        <div class="menu ">
+	                                            <div th:each="o : ${category}" th:text="${o.name == null} ? 'Category(Null)' : ${o.name}" th:data-value="${o.id}" class="item">A</div>
+	                                        </div>	                                        
+	                                    </div>
+	                                    
+	                                    <div class="ui  clear example right labeled button" >Clear</div>
+	                                    
+                                	</div>
+                                    <!-- ------------title-tags------------- -->
+                                    <div class="six wide field">
+                                        <div class="ui left icon input">
+                                            <i class="edit outline icon"></i>
+                                            <input type="text" name="title" placeholder="Title...">                                                                   
+                                        </div>
+                                    </div>
+
+                                    <!-- ------------recommended------------- -->
+                                    <div class="three wide field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" id="recommended" name="recommended" >
+                                            <label for="recommended">Recommended</label>
+                                        </div>
+                                    </div>
+                                    <!-- --------------published-------------- -->
+                                    <div class="three wide field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" id="published" name="published" >
+                                            <label for="published">Published</label>
+                                        </div>
+                                    </div>
+                                                                       
+                                    <div class="three wide field">
+                                        <button type="button" id="searchButton" class="ui inverted olive button right floated"> filter...<i class="search icon right aligned"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="ui error mini message"></div>
+                            
+                            </div>
+                        </div>
+                        <div class="ui segment" id="table-container">
+        
+                            <table class="ui very basic selectable table" th:fragment="blogList">
+                                <thead>
+                                    <tr>
+                                    <th></th>
+                                    <th class="center aligned">Title</th>
+                                    <th>Category</th>
+                                    <th>Recommended</th>
+                                    <th>Update Time</th>
+                                    <th>Status</th>                                                                     
+                                    <th width="20%" class="right aligned">Operation &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="blog,iterStat : ${page.content}">
+                                   	<td width="5%" th:text="${iterStat.count}" class="center aligned">1</td>
+                                    <td width="30%" th:text="${blog.title}">Embedded System auto car</td>
+                                    <td width="10%"th:text="${blog.category.name}">None</td>
+                                    <td width="10%" th:text="${blog.recommended}?'yes':'no'"></td>
+                                    <td width="15%"th:text="${blog.updateTime}">None</td>
+                                    <td width="10%" th:text="${blog.published}?'Published':'Saved'"></td>
+                                    
+                                    <td width="20%" class="right aligned">
+                                        <a href="" th:href="@{/admin/{id}/edit(id=${blog.id})}" class="ui inverted blue button">  &nbsp Edit &nbsp </a>
+                                        <a href="" th:href="@{/admin/{id}/delete(id=${blog.id})}" class="ui inverted brown button">Delete</a>
+                                    </td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="7"  class="ui left aligned">
+                                            <div class="ui horizontal link list " th:if="${page.totalPages}>1">
+                                            <!-- --------here no href attribute in tag <a> , or it will jump to itself won't load second page---------- -->
+                                                <a onclick="page(this)" th:attr="data-page=${page.number}-1" th:unless="${page.first}" class="item">
+                                                	<div class="ui basic button"><i class="ui angle double left icon"></i>Prev</div>
+                                                </a>
+                                                <a onclick="page(this)" th:attr="data-page=${page.number}+1" th:unless="${page.last}" class="item">
+                                                	<div class="ui basic button">Next<i class="ui angle double right icon"></i></div>
+                                                </a>
+                                            </div>
+<!--                                             <a href="" class="ui inverted purple button right floated"> Publish</a>
+ -->                                            <a href="" th:href="@{/admin/editor}" class="ui inverted violet button right floated"> &nbsp Add &nbsp&nbsp</a>
+                                            <!-- <a href="" class="ui inverted violet button right floated"> &nbsp &nbsp Add &nbsp &nbsp</a> -->
+                                        </th>
+
+                                    </tr>
+
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+    
+ 				    <div class="ui container">
+	                    <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+	                    	<i class="close icon"></i>
+	                    	<div class="header">Info: </div>
+	                    	<p th:text="${message}">Success!</p>
+	                    </div>  
+               	     </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+    </div>
+
+
+  <footer th:replace="admin/fragment_admin :: footer" class="ui inverted vertical segment my-footer">
+        <div class="ui center aligned container">
+          <div class="ui grid inverted divided stackable">
+            <div class="three wide column">
+                <div class="ui link list my-padding-updown-small">
+                        <img src="https://github.com/yushi12138/resourcesOL/blob/master/icons/icon_yu.png?raw=true" class="ui circular centered image" alt="" style="width: 120px">
+                </div>
+            </div>
+            <div class="six wide column">
+              <h4 class="ui inverted header my-padding-updown-small">New</h4>
+              <div class="ui inverted link list">
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+                <a href="" class="item"> Story</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header my-padding-updown-small">Contact</h4>
+                <div class="ui inverted link list my-padding-updown-small">
+                    <a href="" class="item my-contact-icon"><i class="mail icon large centered"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="github icon large "></i></a>
+                    <a href="" class="item my-contact-icon"><i class="linkedin icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="twitter icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="facebook icon large"></i></a>
+                    <a href="" class="item my-contact-icon"><i class="wechat icon large"></i></a>
+                </div>
+            </div>
+          </div>
+    
+          <div class="ui inverted section divider"></div>   
+          <p>Copyright...</p>
+        </div>
+    </footer>
+    
+    
+
+    <!-- <script>
+
+    </script> -->
+    <script type="text/javascript" th:inline="javascript">
+        // --------------scroll-down------------------
+        $(document).ready(function(){
+                
+            $(window).scroll(function(){                          
+                if ($(this).scrollTop() > 450) {
+                    $('#menu').fadeIn(500);
+                } else {
+                    $('#menu').fadeOut(500);
+                }
+            });
+            $('.link.example .dropdown')
+            .dropdown({
+                action: 'hide'
+            });
+            
+        });
+        // ------------ sidebar-click----------------
+        $('#sidebar-dropdown-posts')
+            .click(function(){
+                $('.my-sidebar-item-posts').toggle();
+        });
+        $('#sidebar-dropdown-tags')
+            .click(function(){
+                $('.my-sidebar-item-tags').toggle();
+        });
+
+        //------------mobile-following-menu-------------------
+        $('#my-following-header-js-mobile-show')
+            .click(function(){
+                $('.my-following-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        //-------------mobile-header-----------------
+        $('#my-header-js-mobile-show')
+            .click(function(){
+                $('.my-header-js-click-show').toggleClass("my-mobile-hidden");
+        });
+        // -------------dropdown-------------------
+        $('.ui.dropdown').dropdown(
+            {on:'hover'}
+        );
+		//-------------clear-dropdown---------------
+		$('.clear.example .button')
+		  .on('click', function() {
+		    $('.clear.example .ui.dropdown')
+		      .dropdown('clear')
+		    ;
+		  })
+		;
+       
+        // -------------input-validation-------------
+        $('.ui.form').form({
+            fields:{
+                tag:{
+                    identifier:'name',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the tag'
+                    }]
+                },
+                project:{
+                    identifier:'project',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the project'
+                    }]
+                },
+                sharing:{
+                    identifier:'sharing',
+                    rules:[{
+                        type:'empty',
+                        prompt:'please input the sharing'
+                    }]
+                }
+            }
+        });
+        // <!-- ------------markdown-editor-js------------- -->
+        $(document).ready(function(){
+            
+            // use setTimeout(fuction(),3000) to slow down the markdown editor loading, 
+            // and avoiding jump to the cursor
+            var testEditor;
+            $(setTimeout(function() {
+                testEditor = editormd("md-content", {
+                    width   : "100%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : /*[[@{/l	ib/editormd/lib/}]]*/
+                });
+            }, 2500));
+        });
+
+
+
+    </script>
+    
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+            document.getElementById("menu").style.top = "0";
+            } else {
+            document.getElementById("menu").style.top = "-65px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <!-- message close -->
+    <script>
+    $('.message .close')
+    .on('click', function() {
+      $(this)
+        .closest('.message')
+        .transition('fade');
+    });
+    </script>
+    
+    <script>
+    	/* ----------click-prev/next-page-invoke-GET-request---------- */
+    	function page(obj){
+    		$("[name='page']").val($(obj).data('page'));
+    		loaddata();
+    	}
+    	/* ----------click-searchButton------------- */
+    	$("#searchButton").click(function(){
+    		$("[name='page']").val(0);
+    		loaddata();
+    	});
+    	function loaddata(){
+    		$("#table-container").load(/*[[@{/admin/blogs/search}]]*/"/admin/blogs/search",{
+    			title : $("[name='title']").val(),
+    			categoryId : $("[name='categoryId']").val(),
+    			recommended : $("[name='recommended']").prop('checked'),
+    			published : $("[name='published']").prop('checked'),
+    			page : $("[name='page']").val()
+    	});
+    	}
+    </script>
+    
+</body>
+</html>
