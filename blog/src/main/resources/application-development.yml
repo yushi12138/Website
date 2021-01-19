@@ -4,7 +4,7 @@ spring:
    datasource:
       url: jdbc:mysql://localhost:3306/blog
       username: yu
-      password: s7y7z12l24
+      password: 123
    jpa:
       hibernate:
          ddl-auto: update
